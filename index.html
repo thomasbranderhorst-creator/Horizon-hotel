@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Horizon Hotel | OfficiÃ«le Website</title>
+<title>Horizon Hotel | OfficiÃÂ«le Website</title>
 <meta name="description" content="Boek uw verblijf bij Horizon Hotel. Geniet van comfort, natuur en gastvrijheid in het hart van Nederland.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -197,7 +197,7 @@ textarea.fb-field{resize:vertical;min-height:90px}
     <li><a href="#dining">Restaurant</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="topbar__cta mews-distributor-open" id="navBook">Reserveer</button>
+  <a href="https://app.mews-demo.com/distributor/b2d3796c-0cbf-4abf-bc70-b3a2009f1198" target="_blank" rel="noopener" class="topbar__cta mews-distributor-open" id="navBook">Reserveer</a>
   <button class="menu-toggle" onclick="document.querySelector('.topbar__nav').style.display=this.dataset.open?'none':'flex';this.dataset.open=this.dataset.open?'':'1'" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
@@ -210,7 +210,7 @@ textarea.fb-field{resize:vertical;min-height:90px}
     <h1 class="hero__title">Horizon Hotel<span>Comfort &amp; elegantie in het hart van Nederland</span></h1>
     <p class="hero__text">Waar moderne luxe en natuurlijke schoonheid samenkomen. Ontdek een verblijf dat u niet snel vergeet.</p>
     <div class="hero__actions">
-      <button class="btn btn--primary mews-distributor-open" id="heroBook">Bekijk Kamers &amp; Tarieven</button>
+      <a href="https://app.mews-demo.com/distributor/b2d3796c-0cbf-4abf-bc70-b3a2009f1198" target="_blank" rel="noopener" class="btn btn--primary mews-distributor-open" id="heroBook">Bekijk Kamers &amp; Tarieven</a>
       <a href="#about" class="btn btn--outline">Ontdek het Hotel</a>
     </div>
   </div>
@@ -308,7 +308,7 @@ textarea.fb-field{resize:vertical;min-height:90px}
         <h2>Uw volgende verblijf begint hier</h2>
         <p>Boek rechtstreeks voor de beste prijs. Flexibele annulering, geen verborgen kosten.</p>
       </div>
-      <button class="btn--gold-lg mews-distributor-open" id="ctaBook">Bekijk Beschikbaarheid</button>
+      <a href="https://app.mews-demo.com/distributor/b2d3796c-0cbf-4abf-bc70-b3a2009f1198" target="_blank" rel="noopener" class="btn--gold-lg mews-distributor-open" id="ctaBook">Bekijk Beschikbaarheid</a>
     </div>
   </div>
 </section>
@@ -399,6 +399,30 @@ textarea.fb-field{resize:vertical;min-height:90px}
 <!-- Mews BookingEngine -->
 <script>(function(m,e,w,s){c=m.createElement(e);c.onload=function(){Mews.D.apply(null,s)};c.async=1;c.src=w;t=m.getElementsByTagName(e)[0];t.parentNode.insertBefore(c,t);})(document,'script','https://app.mews-demo.com/distributor/distributor.min.js',[['b2d3796c-0cbf-4abf-bc70-b3a2009f1198'],'https://app.mews-demo.com']);</script>
 <!-- End Mews BookingEngine -->
+
+<!-- Mews Distributor Fallback -->
+<script>
+(function() {
+  setTimeout(function() {
+    var buttons = document.querySelectorAll('.mews-distributor-open');
+    if (window.Mews && window.Mews.Distributor) {
+      // Mews loaded successfully - prevent default link behavior, let overlay work
+      buttons.forEach(function(el) {
+        el.addEventListener('click', function(e) {
+          if (window.Mews && window.Mews.Distributor) {
+            e.preventDefault();
+          }
+        });
+      });
+      console.log('Mews Distributor loaded - overlay mode active');
+    } else {
+      // Mews failed to load - links will work as fallback (href opens in new tab)
+      console.log('Mews Distributor not loaded - fallback link mode active');
+    }
+  }, 3000);
+})();
+</script>
+
 </body>
 </html>
 
