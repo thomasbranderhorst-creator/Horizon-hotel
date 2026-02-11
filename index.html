@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Horizon Hotel | OfficiÃÂ«le Website</title>
+<title>Horizon Hotel | OfficiÃÂÃÂ«le Website</title>
 <meta name="description" content="Boek uw verblijf bij Horizon Hotel. Geniet van comfort, natuur en gastvrijheid in het hart van Nederland.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -399,29 +399,6 @@ textarea.fb-field{resize:vertical;min-height:90px}
 <!-- Mews BookingEngine -->
 <script>(function(m,e,w,s){c=m.createElement(e);c.onload=function(){Mews.D.apply(null,s)};c.async=1;c.src=w;t=m.getElementsByTagName(e)[0];t.parentNode.insertBefore(c,t);})(document,'script','https://app.mews-demo.com/distributor/distributor.min.js',[['b2d3796c-0cbf-4abf-bc70-b3a2009f1198'],'https://app.mews-demo.com']);</script>
 <!-- End Mews BookingEngine -->
-
-<!-- Mews Distributor Fallback -->
-<script>
-(function() {
-  setTimeout(function() {
-    var buttons = document.querySelectorAll('.mews-distributor-open');
-    if (window.Mews && window.Mews.Distributor) {
-      // Mews loaded successfully - prevent default link behavior, let overlay work
-      buttons.forEach(function(el) {
-        el.addEventListener('click', function(e) {
-          if (window.Mews && window.Mews.Distributor) {
-            e.preventDefault();
-          }
-        });
-      });
-      console.log('Mews Distributor loaded - overlay mode active');
-    } else {
-      // Mews failed to load - links will work as fallback (href opens in new tab)
-      console.log('Mews Distributor not loaded - fallback link mode active');
-    }
-  }, 3000);
-})();
-</script>
 
 </body>
 </html>
