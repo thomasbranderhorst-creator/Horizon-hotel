@@ -7,7 +7,7 @@
 <meta name="description" content="Boek uw verblijf bij Horizon Hotel. Geniet van comfort, natuur en gastvrijheid in het hart van Nederland.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://api.mews.com/distributor/distributor.min.js"></script>
+<script src="https://api.mews-demo.com/distributor/distributor.min.js"></script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -198,7 +198,7 @@ textarea.fb-field{resize:vertical;min-height:90px}
     <li><a href="#dining">Restaurant</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="topbar__cta" id="navBook">Reserveer</button>
+  <button class="topbar__cta mews-distributor-open" id="navBook">Reserveer</button>
   <button class="menu-toggle" onclick="document.querySelector('.topbar__nav').style.display=this.dataset.open?'none':'flex';this.dataset.open=this.dataset.open?'':'1'" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
@@ -211,7 +211,7 @@ textarea.fb-field{resize:vertical;min-height:90px}
     <h1 class="hero__title">Horizon Hotel<span>Comfort &amp; elegantie in het hart van Nederland</span></h1>
     <p class="hero__text">Waar moderne luxe en natuurlijke schoonheid samenkomen. Ontdek een verblijf dat u niet snel vergeet.</p>
     <div class="hero__actions">
-      <button class="btn btn--primary" id="heroBook">Bekijk Kamers &amp; Tarieven</button>
+      <button class="btn btn--primary mews-distributor-open" id="heroBook">Bekijk Kamers &amp; Tarieven</button>
       <a href="#about" class="btn btn--outline">Ontdek het Hotel</a>
     </div>
   </div>
@@ -309,7 +309,7 @@ textarea.fb-field{resize:vertical;min-height:90px}
         <h2>Uw volgende verblijf begint hier</h2>
         <p>Boek rechtstreeks voor de beste prijs. Flexibele annulering, geen verborgen kosten.</p>
       </div>
-      <button class="btn--gold-lg" id="ctaBook">Bekijk Beschikbaarheid</button>
+      <button class="btn--gold-lg mews-distributor-open" id="ctaBook">Bekijk Beschikbaarheid</button>
     </div>
   </div>
 </section>
@@ -402,17 +402,11 @@ textarea.fb-field{resize:vertical;min-height:90px}
 var tb=document.getElementById('topbar');
 window.addEventListener('scroll',function(){tb.classList.toggle('solid',window.scrollY>60)});
 
-// Mews Distributor
-function openMews(){
-  Mews.Distributor({
-    configurationIds:['b2d3796c-0cbf-4abf-bc70-b3a2009f1198'],
-    openElements:'.dist-open'
-  },function(d){d.open()});
-}
-document.getElementById('heroBook').addEventListener('click',openMews);
-document.getElementById('navBook').addEventListener('click',openMews);
-document.getElementById('ctaBook').addEventListener('click',openMews);
-try{Mews.Distributor({configurationIds:['b2d3796c-0cbf-4abf-bc70-b3a2009f1198'],openElements:'.dist-open'})}catch(e){}
+// Mews Distributor v2 - correct initialization
+Mews.Distributor({
+  configurationIds: ['b2d3796c-0cbf-4abf-bc70-b3a2009f1198'],
+  openElements: '.mews-distributor-open'
+});
 
 // Dining tabs (visual only)
 document.querySelectorAll('.dining__tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.dining__tab').forEach(function(x){x.classList.remove('active')});t.classList.add('active')})});
