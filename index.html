@@ -402,10 +402,12 @@ textarea.fb-field{resize:vertical;min-height:90px}
 var tb=document.getElementById('topbar');
 window.addEventListener('scroll',function(){tb.classList.toggle('solid',window.scrollY>60)});
 
-// Mews Distributor v2 - correct initialization
+// Mews Distributor - Demo environment integration
 Mews.Distributor({
-  configurationIds: ['b2d3796c-0cbf-4abf-bc70-b3a2009f1198'],
+  configurationIds: ['93e27b6f-cba7-4e0b-a24a-819e1b7b388a'],
   openElements: '.mews-distributor-open'
+}, function(distributor) {
+  window.mewsDistributor = distributor;
 });
 
 // Dining tabs (visual only)
