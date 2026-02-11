@@ -181,6 +181,10 @@ textarea.fb-field{resize:vertical;min-height:90px}
   .gc-float__btn{padding:16px}
 }
 </style>
+<!-- Mews BookingEngine -->
+<script>(function(m,e,w,s){c=m.createElement(e);c.onload=function(){
+Mews.D.apply(null,s)};c.async=1;c.src=w;t=m.getElementsByTagName(e)[0];t.parentNode.insertBefore(c,t);})(document,'script','https://app.mews-demo.com/distributor/distributor.min.js',[['b2d3796c-0cbf-4abf-bc70-b3a2009f1198'],'https://app.mews-demo.com']);</script>
+<!-- End Mews BookingEngine -->
 </head>
 <body>
 
@@ -197,7 +201,7 @@ textarea.fb-field{resize:vertical;min-height:90px}
     <li><a href="#dining">Restaurant</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="https://app.mews-demo.com/distributor/b2d3796c-0cbf-4abf-bc70-b3a2009f1198" target="_blank" class="topbar__cta" id="navBook">Reserveer</a>
+  <button class="topbar__cta mews-distributor-open" id="navBook">Reserveer</button>
   <button class="menu-toggle" onclick="document.querySelector('.topbar__nav').style.display=this.dataset.open?'none':'flex';this.dataset.open=this.dataset.open?'':'1'" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
@@ -210,7 +214,7 @@ textarea.fb-field{resize:vertical;min-height:90px}
     <h1 class="hero__title">Horizon Hotel<span>Comfort &amp; elegantie in het hart van Nederland</span></h1>
     <p class="hero__text">Waar moderne luxe en natuurlijke schoonheid samenkomen. Ontdek een verblijf dat u niet snel vergeet.</p>
     <div class="hero__actions">
-      <a href="https://app.mews-demo.com/distributor/b2d3796c-0cbf-4abf-bc70-b3a2009f1198" target="_blank" class="btn btn--primary" id="heroBook">Bekijk Kamers &amp; Tarieven</a>
+      <button class="btn btn--primary mews-distributor-open" id="heroBook">Bekijk Kamers &amp; Tarieven</button>
       <a href="#about" class="btn btn--outline">Ontdek het Hotel</a>
     </div>
   </div>
@@ -308,7 +312,7 @@ textarea.fb-field{resize:vertical;min-height:90px}
         <h2>Uw volgende verblijf begint hier</h2>
         <p>Boek rechtstreeks voor de beste prijs. Flexibele annulering, geen verborgen kosten.</p>
       </div>
-      <a href="https://app.mews-demo.com/distributor/b2d3796c-0cbf-4abf-bc70-b3a2009f1198" target="_blank" class="btn--gold-lg" id="ctaBook">Bekijk Beschikbaarheid</a>
+      <button class="btn--gold-lg mews-distributor-open" id="ctaBook">Bekijk Beschikbaarheid</button>
     </div>
   </div>
 </section>
