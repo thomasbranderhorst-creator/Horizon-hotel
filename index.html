@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon Hotel | OfficiÃ«le Website</title>
+<meta name="description" content="Boek uw verblijf bij Horizon Hotel. Geniet van comfort, natuur en gastvrijheid in het hart van Nederland.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://api.mews.com/distributor/distributor.min.js"></script>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0f2b4a;--blue:#1a6fb5;--blue-light:#e8f2fa;--gold:#c8a84e;
+  --sand:#f5f0e8;--white:#ffffff;--off-white:#faf9f6;
+  --text:#1e1e1e;--text-mid:#4a4a4a;--text-light:#7a7a7a;
+  --radius:8px;--shadow:0 2px 16px rgba(0,0,0,.07);
+  --shadow-hover:0 8px 32px rgba(0,0,0,.12);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--text);background:var(--off-white);line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.25}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+/* ============ HERO ============ */
+.hero{position:relative;height:92vh;min-height:560px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero__bg{position:absolute;inset:0;background:url('https://d30ilqdabtcdbe.cloudfront.net/companies/newtest/main/content/images/5ad0e574-ba2b-427c-ab75-b863ca0ce472/main.jpeg') center/cover no-repeat;transform:scale(1.03);animation:heroZoom 25s ease alternate infinite}
+@keyframes heroZoom{0%{transform:scale(1.03)}100%{transform:scale(1.08)}}
+.hero__overlay{position:absolute;inset:0;background:linear-gradient(170deg,rgba(15,43,74,.62) 0%,rgba(15,43,74,.45) 50%,rgba(15,43,74,.7) 100%)}
+.hero__inner{position:relative;z-index:2;text-align:center;color:var(--white);padding:0 24px;max-width:720px}
+.hero__stars{letter-spacing:6px;font-size:.9rem;margin-bottom:16px;opacity:.8}
+.hero__title{font-size:clamp(2.6rem,5.5vw,4.2rem);margin-bottom:16px;letter-spacing:-.5px}
+.hero__title span{display:block;font-style:italic;font-weight:400;font-size:.45em;letter-spacing:2px;margin-top:4px;opacity:.85}
+.hero__text{font-size:1.05rem;font-weight:300;opacity:.88;max-width:520px;margin:0 auto 36px}
+.hero__actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 34px;border-radius:50px;font-family:'Inter',sans-serif;font-weight:600;font-size:.92rem;border:none;cursor:pointer;transition:all .25s}
+.btn--primary{background:var(--gold);color:var(--navy)}
+.btn--primary:hover{background:#d4b45a;transform:translateY(-2px);box-shadow:0 6px 24px rgba(200,168,78,.4)}
+.btn--outline{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.5)}
+.btn--outline:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.8)}
+.hero__scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:2;width:24px;height:40px;border:2px solid rgba(255,255,255,.4);border-radius:12px;display:flex;justify-content:center;padding-top:8px}
+.hero__scroll::after{content:'';width:3px;height:8px;background:rgba(255,255,255,.6);border-radius:2px;animation:scrollDot 1.8s ease-in-out infinite}
+@keyframes scrollDot{0%,100%{opacity:1;transform:translateY(0)}50%{opacity:.3;transform:translateY(10px)}}
+
+/* ============ NAV ============ */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;transition:all .35s}
+.topbar.solid{background:var(--white);box-shadow:0 1px 12px rgba(0,0,0,.08)}
+.topbar__logo{display:flex;align-items:center;gap:12px;font-family:'Playfair Display',serif;font-weight:700;font-size:1.2rem;color:var(--white);transition:color .3s}
+.topbar.solid .topbar__logo{color:var(--navy)}
+.topbar__logo img{height:38px;width:38px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.3);transition:border-color .3s}
+.topbar.solid .topbar__logo img{border-color:var(--blue)}
+.topbar__nav{display:flex;gap:32px;list-style:none}
+.topbar__nav a{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.82);letter-spacing:.3px;transition:color .3s;position:relative}
+.topbar__nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--gold);transition:width .25s}
+.topbar__nav a:hover::after{width:100%}
+.topbar.solid .topbar__nav a{color:var(--text-mid)}
+.topbar.solid .topbar__nav a:hover{color:var(--navy)}
+.topbar__cta{background:var(--gold);color:var(--navy);padding:10px 26px;border-radius:50px;font-weight:600;font-size:.85rem;transition:all .25s;border:none;cursor:pointer}
+.topbar__cta:hover{background:#d4b45a;transform:scale(1.03)}
+.menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.menu-toggle span{display:block;width:22px;height:2px;margin:5px 0;background:var(--white);transition:background .3s}
+.topbar.solid .menu-toggle span{background:var(--navy)}
+
+/* ============ SECTIONS ============ */
+section{padding:88px 24px}
+.wrap{max-width:1120px;margin:0 auto}
+.sec-overline{font-size:.72rem;letter-spacing:3.5px;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:8px}
+.sec-title{font-size:clamp(1.6rem,3vw,2.4rem);color:var(--navy);margin-bottom:14px}
+.sec-text{font-size:.98rem;color:var(--text-light);max-width:580px;line-height:1.7;margin-bottom:40px}
+
+/* ============ ABOUT ============ */
+.about{background:var(--white)}
+.about__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about__images{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.about__images img{border-radius:var(--radius);height:220px;width:100%;object-fit:cover;box-shadow:var(--shadow)}
+.about__images img:first-child{grid-column:1/-1;height:260px}
+.about__stats{display:flex;gap:32px;margin-top:28px}
+.about__stat{text-align:center}
+.about__stat-num{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);font-weight:700}
+.about__stat-label{font-size:.75rem;color:var(--text-light);text-transform:uppercase;letter-spacing:1px}
+
+/* ============ FACILITIES ============ */
+.facilities__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.fac-card{background:var(--white);border-radius:var(--radius);padding:28px 20px;text-align:center;box-shadow:var(--shadow);transition:all .25s}
+.fac-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.fac-card__icon{width:48px;height:48px;background:var(--blue-light);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:1.4rem}
+.fac-card__title{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--navy);margin-bottom:6px}
+.fac-card__text{font-size:.82rem;color:var(--text-light);line-height:1.5}
+
+/* ============ ROUTES ============ */
+.routes{background:var(--white)}
+.routes__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.r-card{background:var(--off-white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .25s}
+.r-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.r-card__img{position:relative;height:150px;overflow:hidden}
+.r-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.r-card:hover .r-card__img img{transform:scale(1.06)}
+.r-card__km{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.93);color:var(--navy);font-weight:700;font-size:.8rem;padding:3px 10px;border-radius:6px;backdrop-filter:blur(4px)}
+.r-card__body{padding:14px 16px 18px}
+.r-card__name{font-family:'Playfair Display',serif;font-size:.88rem;color:var(--navy);margin-bottom:6px;line-height:1.3}
+.r-card__meta{font-size:.73rem;color:var(--text-light);margin-bottom:12px;line-height:1.6}
+.r-card__btn{display:block;text-align:center;background:var(--blue);color:var(--white);font-weight:600;font-size:.78rem;padding:9px;border-radius:6px;transition:background .2s}
+.r-card__btn:hover{background:var(--navy)}
+
+/* ============ DINING ============ */
+.dining__tabs{display:flex;gap:8px;margin-bottom:28px;flex-wrap:wrap}
+.dining__tab{padding:8px 20px;border-radius:50px;font-size:.82rem;font-weight:600;cursor:pointer;border:1.5px solid #ddd;background:var(--white);color:var(--text-mid);transition:all .2s}
+.dining__tab.active,.dining__tab:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.dining__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.d-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:all .25s}
+.d-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+.d-card__img{height:180px;overflow:hidden}
+.d-card__img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.d-card:hover .d-card__img img{transform:scale(1.05)}
+.d-card__body{padding:16px 18px}
+.d-card__name{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:4px}
+.d-card__sub{font-size:.82rem;color:var(--text-light);line-height:1.5}
+
+/* ============ BOOKING BANNER ============ */
+.cta-banner{background:var(--navy);position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;top:-50%;right:-20%;width:500px;height:500px;background:radial-gradient(circle,rgba(200,168,78,.15) 0%,transparent 70%);pointer-events:none}
+.cta-banner__inner{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.cta-banner__text{color:var(--white);max-width:520px}
+.cta-banner__text h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:10px;color:var(--white)}
+.cta-banner__text p{opacity:.75;font-size:.95rem}
+.btn--gold-lg{background:var(--gold);color:var(--navy);padding:16px 42px;font-size:1rem;border-radius:50px;font-weight:700;border:none;cursor:pointer;transition:all .25s;white-space:nowrap}
+.btn--gold-lg:hover{background:#d4b45a;transform:translateY(-2px);box-shadow:0 6px 24px rgba(200,168,78,.4)}
+
+/* ============ WEATHER ============ */
+.weather{background:var(--white)}
+.weather__card{display:inline-flex;align-items:center;gap:28px;background:linear-gradient(135deg,var(--blue) 0%,#2980b9 100%);color:var(--white);padding:28px 40px;border-radius:12px;box-shadow:0 4px 20px rgba(26,111,181,.25)}
+.weather__temp{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:700}
+.weather__info{font-size:.9rem;line-height:1.9;opacity:.9}
+
+/* ============ FEEDBACK ============ */
+.feedback__box{max-width:480px;margin:0 auto;background:var(--white);padding:36px;border-radius:12px;box-shadow:var(--shadow)}
+.feedback__box h3{font-size:1.2rem;color:var(--navy);margin-bottom:18px;text-align:center}
+.fb-field{width:100%;padding:13px 16px;border:1.5px solid #e0ddd6;border-radius:var(--radius);font-size:.9rem;font-family:inherit;margin-bottom:12px;transition:border-color .2s;background:var(--off-white)}
+.fb-field:focus{outline:none;border-color:var(--blue);background:var(--white)}
+textarea.fb-field{resize:vertical;min-height:90px}
+.fb-submit{width:100%;padding:14px;background:var(--navy);color:var(--white);border:none;border-radius:var(--radius);font-size:.92rem;font-weight:600;cursor:pointer;transition:background .2s;font-family:inherit}
+.fb-submit:hover{background:#183d5e}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--navy);color:rgba(255,255,255,.5);padding:48px 24px 32px}
+.footer__inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer__brand{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--white);margin-bottom:10px}
+.footer__brand-text{font-size:.85rem;line-height:1.6;max-width:280px}
+.footer h4{color:rgba(255,255,255,.8);font-family:'Inter',sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:14px;font-weight:600}
+.footer ul{list-style:none}
+.footer li{margin-bottom:8px}
+.footer li a{font-size:.85rem;transition:color .2s}
+.footer li a:hover{color:var(--gold)}
+.footer__bottom{max-width:1120px;margin:32px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);text-align:center;font-size:.78rem}
+
+/* ============ FLOATING CHAT BUTTON ============ */
+.gc-float{position:fixed;bottom:24px;right:24px;z-index:999;display:flex;align-items:center;gap:0;filter:drop-shadow(0 4px 16px rgba(0,0,0,.18));animation:gcPulse 3s ease-in-out infinite}
+@keyframes gcPulse{0%,100%{filter:drop-shadow(0 4px 16px rgba(0,0,0,.18))}50%{filter:drop-shadow(0 4px 24px rgba(26,111,181,.35))}}
+.gc-float__btn{display:flex;align-items:center;gap:10px;background:var(--blue);color:var(--white);padding:14px 22px 14px 18px;border-radius:50px;font-family:'Inter',sans-serif;font-weight:600;font-size:.88rem;text-decoration:none;transition:all .25s;border:none;cursor:pointer}
+.gc-float__btn:hover{background:var(--navy);transform:translateY(-2px)}
+.gc-float__btn svg{width:22px;height:22px;fill:var(--white);flex-shrink:0}
+.gc-float__pulse{position:absolute;top:-2px;right:-2px;width:12px;height:12px;background:#4ade80;border-radius:50%;border:2px solid var(--white)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1024px){
+  .about__grid{grid-template-columns:1fr;gap:36px}
+  .routes__grid{grid-template-columns:repeat(2,1fr)}
+  .footer__inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .topbar{padding:0 20px;height:60px}
+  .topbar__nav{display:none}
+  .menu-toggle{display:block}
+  .facilities__grid{grid-template-columns:repeat(2,1fr)}
+  .dining__grid{grid-template-columns:1fr}
+  .routes__grid{grid-template-columns:1fr}
+  .cta-banner__inner{justify-content:center;text-align:center}
+  section{padding:60px 20px}
+  .footer__inner{grid-template-columns:1fr}
+  .gc-float__btn span{display:none}
+  .gc-float__btn{padding:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- ======= TOPBAR ======= -->
+<header class="topbar" id="topbar">
+  <a href="#" class="topbar__logo">
+    <img src="https://d30ilqdabtcdbe.cloudfront.net/companies/newtest/main/content/images/5ad0e574-ba2b-427c-ab75-b863ca0ce472/main.jpeg" alt="Horizon Hotel">
+    Horizon Hotel
+  </a>
+  <ul class="topbar__nav">
+    <li><a href="#about">Over ons</a></li>
+    <li><a href="#facilities">Faciliteiten</a></li>
+    <li><a href="#routes">Omgeving</a></li>
+    <li><a href="#dining">Restaurant</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="topbar__cta" id="navBook">Reserveer</button>
+  <button class="menu-toggle" onclick="document.querySelector('.topbar__nav').style.display=this.dataset.open?'none':'flex';this.dataset.open=this.dataset.open?'':'1'" aria-label="Menu"><span></span><span></span><span></span></button>
+</header>
+
+<!-- ======= HERO ======= -->
+<section class="hero" id="top">
+  <div class="hero__bg"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__inner">
+    <div class="hero__stars">&#9733; &#9733; &#9733; &#9733;</div>
+    <h1 class="hero__title">Horizon Hotel<span>Comfort &amp; elegantie in het hart van Nederland</span></h1>
+    <p class="hero__text">Waar moderne luxe en natuurlijke schoonheid samenkomen. Ontdek een verblijf dat u niet snel vergeet.</p>
+    <div class="hero__actions">
+      <button class="btn btn--primary" id="heroBook">Bekijk Kamers &amp; Tarieven</button>
+      <a href="#about" class="btn btn--outline">Ontdek het Hotel</a>
+    </div>
+  </div>
+  <div class="hero__scroll"></div>
+</section>
+
+<!-- ======= ABOUT ======= -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about__grid">
+      <div>
+        <p class="sec-overline">Welkom</p>
+        <h2 class="sec-title">Uw thuis ver van huis</h2>
+        <p class="sec-text">Horizon Hotel combineert hedendaags comfort met warme gastvrijheid. Gelegen te midden van de mooiste natuur van Nederland, bieden wij de ideale uitvalsbasis voor zowel zakelijke reizigers als vakantiegangers. Elk detail is ontworpen met uw welzijn in gedachten.</p>
+        <div class="about__stats">
+          <div class="about__stat"><div class="about__stat-num">96%</div><div class="about__stat-label">Tevreden gasten</div></div>
+          <div class="about__stat"><div class="about__stat-num">42</div><div class="about__stat-label">Kamers &amp; Suites</div></div>
+          <div class="about__stat"><div class="about__stat-num">12+</div><div class="about__stat-label">Fietsroutes</div></div>
+        </div>
+      </div>
+      <div class="about__images">
+        <img src="https://d30ilqdabtcdbe.cloudfront.net/companies/newtest/main/content/images/5ad0e574-ba2b-427c-ab75-b863ca0ce472/main.jpeg" alt="Horizon Hotel exterieur">
+        <img src="https://d30ilqdabtcdbe.cloudfront.net/companies/newtest/main/content/images/ce771300-8e99-43e9-8445-4378fa6cfb5f/versions/1-1.jpeg" alt="Ontbijt">
+        <img src="https://d30ilqdabtcdbe.cloudfront.net/companies/newtest/main/content/images/82eb04a4-e901-4cf5-b07b-c6f3ff00adb8/versions/1-1.jpeg" alt="Restaurant">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FACILITIES ======= -->
+<section class="facilities" id="facilities">
+  <div class="wrap">
+    <p class="sec-overline">Faciliteiten</p>
+    <h2 class="sec-title">Alles voor een zorgeloos verblijf</h2>
+    <p class="sec-text">Van een verfrissende duik in het zwembad tot handige parkeermogelijkheden direct bij de deur.</p>
+    <div class="facilities__grid">
+      <div class="fac-card"><div class="fac-card__icon">&#127946;</div><div class="fac-card__title">Zwembad</div><div class="fac-card__text">Verwarmd binnenzwembad, dagelijks geopend voor alle hotelgasten.</div></div>
+      <div class="fac-card"><div class="fac-card__icon">&#127860;</div><div class="fac-card__title">Ontbijt</div><div class="fac-card__text">Uitgebreid buffet met verse, lokale producten om uw dag goed te starten.</div></div>
+      <div class="fac-card"><div class="fac-card__icon">&#128663;</div><div class="fac-card__title">Parkeren</div><div class="fac-card__text">Ruime, beveiligde parkeerplaats direct bij het hotel.</div></div>
+      <div class="fac-card"><div class="fac-card__icon">&#128652;</div><div class="fac-card__title">Transfer Service</div><div class="fac-card__text">Luchthaven- en stationsvervoer op aanvraag beschikbaar.</div></div>
+      <div class="fac-card"><div class="fac-card__icon">&#128694;</div><div class="fac-card__title">Wandelpaden</div><div class="fac-card__text">Prachtige wandelroutes starten direct vanuit het hotel.</div></div>
+      <div class="fac-card"><div class="fac-card__icon">&#128246;</div><div class="fac-card__text">Snel en betrouwbaar draadloos internet in het gehele hotel.</div><div class="fac-card__title">Gratis WiFi</div></div>
+      <div class="fac-card"><div class="fac-card__icon">&#128718;</div><div class="fac-card__title">Receptie 24/7</div><div class="fac-card__text">Ons team staat dag en nacht voor u klaar.</div></div>
+      <div class="fac-card"><div class="fac-card__icon">&#128690;</div><div class="fac-card__title">Fietsverhuur</div><div class="fac-card__text">Huur een fiets en ontdek de omgeving op eigen tempo.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= ROUTES ======= -->
+<section class="routes" id="routes">
+  <div class="wrap">
+    <p class="sec-overline">Ontdek de omgeving</p>
+    <h2 class="sec-title">Fietsroutes vanuit het hotel</h2>
+    <p class="sec-text">Nederland op zijn mooist. Kies een route en verken de prachtige natuur rondom het hotel.</p>
+    <div class="routes__grid">
+      <div class="r-card"><div class="r-card__img"><img src="https://res.cloudinary.com/laad-media-b-v/image/upload/v1526547090/bikingroutes/gravenlandsebuitenplaatsen.jpg" alt="'s-Gravelandse buitenplaatsen"><span class="r-card__km">37.1 km</span></div><div class="r-card__body"><div class="r-card__name">'s-Gravelandse buitenplaatsen</div><div class="r-card__meta">&#9201; 3u 52m &nbsp; &#9925; Gemiddeld<br>&#128205; 's-Graveland, Laren, Hilversum</div><a href="https://horizonhotel.guestinfo.com/NL" class="r-card__btn">Bekijk route</a></div></div>
+      <div class="r-card"><div class="r-card__img"><img src="https://res.cloudinary.com/laad-media-b-v/image/upload/v1629817119/bikingroutes/AckerdijksePlassenenBroekpolder-fotograaf-ReneKoster-Natuurmonumenten.jpg" alt="Ackerdijkse Plassen"><span class="r-card__km">65.6 km</span></div><div class="r-card__body"><div class="r-card__name">Ackerdijkse Plassen en Broekpolder</div><div class="r-card__meta">&#9201; 4u 5m &nbsp; &#127783; Moeilijk<br>&#128205; Rotterdam, Vlaardingen</div><a href="https://horizonhotel.guestinfo.com/NL" class="r-card__btn">Bekijk route</a></div></div>
+      <div class="r-card"><div class="r-card__img"><img src="https://res.cloudinary.com/laad-media-b-v/image/upload/v1525678907/bikingroutes/bijzonderenatuurmonumenten.jpg" alt="Bijzondere Natuurmonumenten"><span class="r-card__km">91.6 km</span></div><div class="r-card__body"><div class="r-card__name">Bijzondere Natuurmonumenten</div><div class="r-card__meta">&#9201; 6u 34m &nbsp; &#127783; Moeilijk<br>&#128205; Wolfheze, Rheden, Deelen</div><a href="https://horizonhotel.guestinfo.com/NL" class="r-card__btn">Bekijk route</a></div></div>
+      <div class="r-card"><div class="r-card__img"><img src="https://res.cloudinary.com/laad-media-b-v/image/upload/v1528106528/bikingroutes/Fietsroute_Bloemen_schapen_en_water.jpg" alt="Bloemen, schapen en water"><span class="r-card__km">70.9 km</span></div><div class="r-card__body"><div class="r-card__name">Bloemen, schapen en water</div><div class="r-card__meta">&#9201; 4u 6m &nbsp; &#127783; Moeilijk<br>&#128205; Kwadendamme, Heinkenszand</div><a href="https://horizonhotel.guestinfo.com/NL" class="r-card__btn">Bekijk route</a></div></div>
+      <div class="r-card"><div class="r-card__img"><img src="https://res.cloudinary.com/laad-media-b-v/image/upload/v1529928364/bikingroutes/Fietsroute_Bossen_en_Vennen.jpg" alt="Bossen en vennen"><span class="r-card__km">69.0 km</span></div><div class="r-card__body"><div class="r-card__name">Bossen en vennen</div><div class="r-card__meta">&#9201; 4u 12m &nbsp; &#127783; Moeilijk<br>&#128205; Boxtel, Oisterwijk, Loon op Zand</div><a href="https://horizonhotel.guestinfo.com/NL" class="r-card__btn">Bekijk route</a></div></div>
+      <div class="r-card"><div class="r-card__img"><img src="https://res.cloudinary.com/laad-media-b-v/image/upload/v1526982236/bikingroutes/allermooistevechtplassen.jpg" alt="De allermooiste Vechtplassen"><span class="r-card__km">35.3 km</span></div><div class="r-card__body"><div class="r-card__name">De allermooiste Vechtplassen</div><div class="r-card__meta">&#9201; 2u 23m &nbsp; &#9925; Gemiddeld<br>&#128205; 's-Graveland, Kortenhoef</div><a href="https://horizonhotel.guestinfo.com/NL" class="r-card__btn">Bekijk route</a></div></div>
+      <div class="r-card"><div class="r-card__img"><img src="https://res.cloudinary.com/laad-media-b-v/image/upload/v1525332440/bikingroutes/degeheimenvansalland.jpg" alt="De geheimen van Salland"><span class="r-card__km">105.3 km</span></div><div class="r-card__body"><div class="r-card__name">De geheimen van Salland</div><div class="r-card__meta">&#9201; 7u 2m &nbsp; &#127783; Moeilijk<br>&#128205; Nijverdal, Hellendoorn</div><a href="https://horizonhotel.guestinfo.com/NL" class="r-card__btn">Bekijk route</a></div></div>
+      <div class="r-card"><div class="r-card__img"><img src="https://res.cloudinary.com/laad-media-b-v/image/upload/v1526300115/bikingroutes/deschrijfsterendeschilder.jpg" alt="De schrijfster en de schilder"><span class="r-card__km">33.1 km</span></div><div class="r-card__body"><div class="r-card__name">De schrijfster en de schilder</div><div class="r-card__meta">&#9201; 2u 45m &nbsp; &#127783; Moeilijk<br>&#128205; Maarssen, Tienhoven</div><a href="https://horizonhotel.guestinfo.com/NL" class="r-card__btn">Bekijk route</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= DINING ======= -->
+<section class="dining" id="dining">
+  <div class="wrap">
+    <p class="sec-overline">Culinair</p>
+    <h2 class="sec-title">Restaurant &amp; eetgelegenheden</h2>
+    <p class="sec-text">Geniet van heerlijke gerechten in ons restaurant of ontdek de beste culinaire hotspots in de omgeving.</p>
+    <div class="dining__tabs">
+      <span class="dining__tab active">Alle</span>
+      <span class="dining__tab">In het hotel</span>
+      <span class="dining__tab">In de buurt</span>
+    </div>
+    <div class="dining__grid">
+      <div class="d-card"><div class="d-card__img"><img src="https://d30ilqdabtcdbe.cloudfront.net/companies/newtest/main/content/images/ce771300-8e99-43e9-8445-4378fa6cfb5f/versions/1-1.jpeg" alt="Ontbijt"></div><div class="d-card__body"><div class="d-card__name">Ontbijt</div><div class="d-card__sub">Begin uw dag goed met ons uitgebreide ontbijtbuffet, dagelijks geserveerd van 07:00 tot 10:30.</div></div></div>
+      <div class="d-card"><div class="d-card__img"><img src="https://d30ilqdabtcdbe.cloudfront.net/companies/newtest/main/content/images/2bf0175c-4edb-4657-abbe-097f0466ec32/versions/1-1.jpeg" alt="Lunchen"></div><div class="d-card__body"><div class="d-card__name">Lunchen</div><div class="d-card__sub">Gezellig lunchen in ons restaurant met een wisselend menu van verse, seizoensgebonden gerechten.</div></div></div>
+      <div class="d-card"><div class="d-card__img"><img src="https://d30ilqdabtcdbe.cloudfront.net/companies/newtest/main/content/images/82eb04a4-e901-4cf5-b07b-c6f3ff00adb8/versions/1-1.jpeg" alt="Ons restaurant"></div><div class="d-card__body"><div class="d-card__name">Ons Restaurant</div><div class="d-card__sub">Geniet van onze heerlijke gerechten in een warme, sfeervolle omgeving met uitzicht op de tuin.</div></div></div>
+      <div class="d-card"><div class="d-card__img"><img src="https://media-cdn.tripadvisor.com/media/photo-s/2d/a3/2a/32/sfeer.jpg" alt="DeDAKKAS"></div><div class="d-card__body"><div class="d-card__name">DeDAKKAS</div><div class="d-card__sub">Rooftop Bar &amp; Restaurant in een kas met groot terras en fantastisch uitzicht over Haarlem.</div></div></div>
+      <div class="d-card"><div class="d-card__img"><img src="https://media-cdn.tripadvisor.com/media/photo-p/14/f2/fc/de/photo7jpg.jpg" alt="Ramen Brothers"></div><div class="d-card__body"><div class="d-card__name">Ramen Brothers</div><div class="d-card__sub">Authentieke Japanse ramen met een originele twist. Seizoensmenu met voor ieder wat wils.</div></div></div>
+      <div class="d-card"><div class="d-card__img"><img src="https://media-cdn.tripadvisor.com/media/photo-s/16/62/44/45/interieur-en-bar.jpg" alt="Spaarne66"></div><div class="d-card__body"><div class="d-card__name">Spaarne66</div><div class="d-card__sub">Modern Europese keuken aan het Spaarne in Haarlem. Stijlvol interieur met uitzicht op het water.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CTA BANNER ======= -->
+<section class="cta-banner" id="booking">
+  <div class="wrap">
+    <div class="cta-banner__inner">
+      <div class="cta-banner__text">
+        <h2>Uw volgende verblijf begint hier</h2>
+        <p>Boek rechtstreeks voor de beste prijs. Flexibele annulering, geen verborgen kosten.</p>
+      </div>
+      <button class="btn--gold-lg" id="ctaBook">Bekijk Beschikbaarheid</button>
+    </div>
+  </div>
+</section>
+
+<!-- ======= WEATHER ======= -->
+<section class="weather" id="weather">
+  <div class="wrap">
+    <p class="sec-overline">Lokaal weer</p>
+    <h2 class="sec-title">Het weer vandaag</h2>
+    <div style="margin-top:8px">
+      <div class="weather__card">
+        <div class="weather__temp">7&deg;C</div>
+        <div class="weather__info">
+          &#127783;&#65039; Lichte regen<br>
+          &#128167; Neerslag: 100%<br>
+          &#9728;&#65039; Zon: 10%<br>
+          &#128168; Wind: 3 Bft
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FEEDBACK ======= -->
+<section id="contact">
+  <div class="wrap">
+    <p class="sec-overline">Contact</p>
+    <h2 class="sec-title" style="text-align:center">Hoe bevalt uw verblijf?</h2>
+    <p class="sec-text" style="text-align:center;margin-left:auto;margin-right:auto">Wij vinden uw mening belangrijk en gebruiken uw feedback om onze service continu te verbeteren.</p>
+    <div class="feedback__box">
+      <h3>Verstuur feedback</h3>
+      <form id="fbForm" onsubmit="event.preventDefault();document.getElementById('fbForm').innerHTML='<p style=\'text-align:center;padding:24px;color:var(--navy);font-weight:600;font-size:1rem\'>Hartelijk dank voor uw feedback!</p>'">
+        <input class="fb-field" type="text" placeholder="Uw naam" required>
+        <input class="fb-field" type="text" placeholder="Kamernummer" required>
+        <textarea class="fb-field" placeholder="Uw ervaring..."></textarea>
+        <button type="submit" class="fb-submit">Verstuur</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div>
+      <div class="footer__brand">Horizon Hotel</div>
+      <p class="footer__brand-text">Comfort en elegantie in het hart van Nederland. Wij kijken ernaar uit u te mogen verwelkomen.</p>
+    </div>
+    <div>
+      <h4>Hotel</h4>
+      <ul>
+        <li><a href="#about">Over ons</a></li>
+        <li><a href="#facilities">Faciliteiten</a></li>
+        <li><a href="#dining">Restaurant</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Omgeving</h4>
+      <ul>
+        <li><a href="#routes">Fietsroutes</a></li>
+        <li><a href="https://horizonhotel.guestinfo.com/NL/12/wandelpaden">Wandelpaden</a></li>
+        <li><a href="#weather">Lokaal weer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Diensten</h4>
+      <ul>
+        <li><a href="https://horizonhotel.guestinfo.com/NL/9/transfer-service-nl">Transfer service</a></li>
+        <li><a href="https://horizonhotel.guestinfo.com/NL/10/parkeerplaats-nl">Parkeren</a></li>
+        <li><a href="https://horizonhotel.guestinfo.com/NL/11/zwembad">Zwembad</a></li>
+        <li><a href="https://horizonhotel.guestinfo.com/NL">GuestCompass</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">&copy; 2026 Horizon Hotel. Alle rechten voorbehouden.</div>
+</footer>
+
+<!-- ======= FLOATING GUESTCOMPASS BUTTON ======= -->
+<a href="https://horizonhotel.guestinfo.com/NL" target="_blank" rel="noopener" class="gc-float" title="Praat met onze digitale assistent">
+  <span class="gc-float__btn">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.2L4 17.2V4h16v12z"/><path d="M7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+    <span>Praat met onze digitale assistent</span>
+  </span>
+  <span class="gc-float__pulse"></span>
+</a>
+
+<script>
+// Navbar solid on scroll
+var tb=document.getElementById('topbar');
+window.addEventListener('scroll',function(){tb.classList.toggle('solid',window.scrollY>60)});
+
+// Mews Distributor
+function openMews(){
+  Mews.Distributor({
+    configurationIds:['b2d3796c-0cbf-4abf-bc70-b3a2009f1198'],
+    openElements:'.dist-open'
+  },function(d){d.open()});
+}
+document.getElementById('heroBook').addEventListener('click',openMews);
+document.getElementById('navBook').addEventListener('click',openMews);
+document.getElementById('ctaBook').addEventListener('click',openMews);
+try{Mews.Distributor({configurationIds:['b2d3796c-0cbf-4abf-bc70-b3a2009f1198'],openElements:'.dist-open'})}catch(e){}
+
+// Dining tabs (visual only)
+document.querySelectorAll('.dining__tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.dining__tab').forEach(function(x){x.classList.remove('active')});t.classList.add('active')})});
+</script>
+</body>
+</html>
+
